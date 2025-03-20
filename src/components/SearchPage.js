@@ -1,12 +1,11 @@
 'use client';
-// pages/SearchPage.js (or wherever you want to place it)
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Added import
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Sample product data (replace with your actual data)
   const products = [
     { id: 1, name: 'গুড় (Molasses)', category: 'Molasses', price: 150, image: '/images/molasses.png' },
     { id: 2, name: 'সরিষার তেল (Mustard Oil)', category: 'Mustard Oil', price: 200, image: '/images/mustard-oil.png' },
@@ -15,14 +14,12 @@ const SearchPage = () => {
     { id: 5, name: 'প্রিমিয়াম গুড় (Premium Molasses)', category: 'Molasses', price: 200, image: '/images/premium-molasses.png' },
   ];
 
-  // Filter products based on search term
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="min-h-screen bg-green-50 p-4">
-      {/* Search Bar */}
       <div className="flex justify-center mb-8">
         <input
           type="text"
@@ -32,8 +29,6 @@ const SearchPage = () => {
           className="w-full max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl p-3 rounded-lg border border-green-800 text-green-800 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-amber-600"
         />
       </div>
-
-      {/* Product Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => <ProductCard key={product.id} product={product} />)
@@ -45,14 +40,15 @@ const SearchPage = () => {
   );
 };
 
-// Product Card Component
 const ProductCard = ({ product }) => {
   return (
     <Link href={`/products/${product.id}`} className="block">
       <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        <img
+        <Image
           src={product.image}
           alt={product.name}
+          width={300} // Adjust based on your design
+          height={192} // Matches h-48 (12rem = 192px)
           className="w-full h-48 object-cover"
         />
         <div className="p-4">

@@ -1,9 +1,9 @@
 'use client';
-// src/components/Navbar.js
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Added import
 import { Menu, ShoppingCart, MessageCircle, X } from 'lucide-react';
-import { useCart } from '../context/CartContext'; // Corrected path
+import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,7 +53,7 @@ const Navbar = () => {
           <ul className="space-y-2">
             {[
               { name: 'গুড় (Molasses)', href: '/category/molasses' },
-              { name: 'সরিষার তেল ও ঘি (Mustard Oil & Ghee)', href: '/category/oil-and-ghee' }, // Updated to combined category
+              { name: 'সরিষার তেল ও ঘি (Mustard Oil & Ghee)', href: '/category/oil-and-ghee' },
               { name: 'গুঁড়া মশলা (Spices Powder)', href: '/category/spices' },
               { name: 'আমের পণ্য (Mango Products)', href: '/category/mango' },
             ].map((item) => (
@@ -74,7 +74,7 @@ const Navbar = () => {
       {/* Desktop/Tablet View */}
       <div className="hidden md:flex items-center justify-between px-6 py-2 relative">
         <Link href="/" className="flex items-center space-x-2 z-10">
-          <img src="/icon.png" alt="Ahnaf Farming Logo" className="h-12 w-12" />
+          <Image src="/icon.png" alt="Ahnaf Farming Logo" width={48} height={48} />
           <span className="text-[#61bd12] text-2xl font-bold">
             Ahnaf <span className="text-[#f98821]">Farming</span>
           </span>
@@ -84,21 +84,21 @@ const Navbar = () => {
           <div className="relative group">
             <button className={`${colors.text} ${colors.accent} text-xl font-medium`}>Category</button>
             <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-8 p-2 min-w-[200px]">
-  {[
-    { name: 'গুড় (Molasses)', href: '/category/molasses' },
-    { name: 'সরিষার তেল ও ঘি (Mustard Oil & Ghee)', href: '/category/oil-and-ghee' },
-    { name: 'গুঁড়া মশলা (Spices Powder)', href: '/category/spices' },
-    { name: 'আমের পণ্য (Mango Products)', href: '/category/mango' },
-  ].map((item) => (
-    <Link
-      key={item.name}
-      href={item.href}
-      className={`${colors.text} ${colors.accent} block py-1 px-4 whitespace-nowrap overflow-hidden`}
-    >
-      {item.name}
-    </Link>
-  ))}
-</div>
+              {[
+                { name: 'গুড় (Molasses)', href: '/category/molasses' },
+                { name: 'সরিষার তেল ও ঘি (Mustard Oil & Ghee)', href: '/category/oil-and-ghee' },
+                { name: 'গুঁড়া মশলা (Spices Powder)', href: '/category/spices' },
+                { name: 'আমের পণ্য (Mango Products)', href: '/category/mango' },
+              ].map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`${colors.text} ${colors.accent} block py-1 px-4 whitespace-nowrap overflow-hidden`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={`${colors.text} ${colors.accent} text-xl font-medium`}>
             WhatsApp

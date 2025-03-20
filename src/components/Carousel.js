@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from 'next/image'; // Added import
 
 const HeroCarousel = () => {
   const slides = [
@@ -35,9 +36,11 @@ const HeroCarousel = () => {
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img
+            <Image
               src={slide.image}
               alt={slide.alt}
+              width={800} // Adjust based on your design
+              height={400} // Adjust based on your design (2:1 ratio)
               className="w-full h-full object-contain object-center"
             />
           </div>

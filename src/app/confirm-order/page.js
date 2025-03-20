@@ -1,9 +1,9 @@
-// src/app/confirm-order/page.js
 'use client';
 import { useCart } from '../../context/CartContext';
 import { useState } from 'react';
-import Navbar from '@/components/Navbar';
+
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'; // Added import for Next.js Image component
 
 export default function ConfirmOrderPage() {
   const { cart } = useCart();
@@ -14,8 +14,8 @@ export default function ConfirmOrderPage() {
 
   const [formData, setFormData] = useState({
     name: '',
-    phone: '', // New field for phone number
-    detailedLocation: '', // New field for detailed delivery location
+    phone: '',
+    detailedLocation: '',
     division: '',
     district: '',
     upazila: '',
@@ -62,7 +62,6 @@ export default function ConfirmOrderPage() {
 
   return (
     <div>
-      
       <div className="min-h-screen bg-green-50 py-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-extrabold text-center text-green-800 mb-8">
@@ -182,7 +181,6 @@ export default function ConfirmOrderPage() {
                         placeholder="আপনার বিস্তারিত ঠিকানা লিখুন (e.g., হাউস নং, রোড নং, এলাকা)"
                       />
                     </div>
-                    
                     <div>
                       <label className="block text-green-800 font-semibold mb-2">
                         লেনদেন আইডি (Transaction ID)
@@ -205,10 +203,12 @@ export default function ConfirmOrderPage() {
                           className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-green-50 p-4 rounded-lg shadow-sm"
                         >
                           <div className="flex items-center space-x-4">
-                            <img
+                            <Image
                               src={item.image}
                               alt={item.name}
-                              className="w-20 h-20 object-cover rounded-lg border border-green-200"
+                              width={80} // Set explicit width (matches original w-20)
+                              height={80} // Set explicit height (matches original h-20)
+                              className="object-cover rounded-lg border border-green-200"
                             />
                             <div>
                               <span className="text-green-800 font-semibold text-lg">

@@ -1,22 +1,21 @@
-// components/ProductCard.js
 import Link from 'next/link';
+import Image from 'next/image'; // Added import
 import { ShoppingCart } from 'lucide-react';
 
 const ProductCard = ({ product, addToCart }) => {
-  // Determine the price unit based on category and product name
   const getPriceUnit = (category, name) => {
     switch (category) {
-        case 'Molasses':
-            case 'Ghee':
-              return '/kg';
-            case 'Mango':
-              return '/প্রতি মণ';
-            case 'MustardOil':
-              return '/5 litre';
-            case 'Spices':
-              return '/pack'; // Added for Spices, adjustable as needed
-            default:
-              return '/kg'; // Default unit if category is unrecognized
+      case 'Molasses':
+      case 'Ghee':
+        return '/kg';
+      case 'Mango':
+        return '/প্রতি মণ';
+      case 'MustardOil':
+        return '/5 litre';
+      case 'Spices':
+        return '/pack';
+      default:
+        return '/kg';
     }
   };
 
@@ -24,12 +23,13 @@ const ProductCard = ({ product, addToCart }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      {/* Clickable area redirects to product details page */}
       <Link href={`/product/${product.id}`}>
         <div className="cursor-pointer">
-          <img
+          <Image
             src={product.image}
             alt={product.name}
+            width={300} // Adjust based on your design
+            height={192} // Matches h-48 (12rem = 192px)
             className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
           />
           <div className="p-4">
@@ -39,7 +39,6 @@ const ProductCard = ({ product, addToCart }) => {
           </div>
         </div>
       </Link>
-      {/* Add to Cart Button */}
       <div className="p-4 pt-0">
         <button
           onClick={() => addToCart(product)}

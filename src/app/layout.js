@@ -1,7 +1,6 @@
-// src/app/layout.js
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ClientLayout from "./ClientLayout"; // New Client Component
+import ClientLayout from "./ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,23 +12,24 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Enhanced metadata for SEO
+// Enhanced metadata for SEO with metadataBase
 export const metadata = {
+  metadataBase: new URL("https://ahnaffarming.com"), // Replace with your actual domain
   title: "Ahnaf Farming - Fresh Organic Products",
   description: "Discover fresh organic products at Ahnaf Farming. Order online and get quality goods delivered to your door in Bangladesh.",
   keywords: "organic products, Ahnaf Farming, fresh food, online grocery, Bangladesh farming, healthy food",
   robots: "index, follow",
   alternates: {
-    canonical: "https://ahnaffarming.com", // Replace with your actual domain
+    canonical: "https://ahnaffarming.com", // Matches metadataBase
   },
   openGraph: {
     title: "Ahnaf Farming - Fresh Organic Products",
     description: "Discover fresh organic products at Ahnaf Farming. Order online and get quality goods delivered to your door in Bangladesh.",
-    url: "https://ahnaffarming.com", // Replace with your actual domain
+    url: "https://ahnaffarming.com",
     siteName: "Ahnaf Farming",
     images: [
       {
-        url: "/icon.png",
+        url: "/icon.png", // Resolved as https://ahnaffarming.com/icon.png with metadataBase
         width: 800,
         height: 600,
         alt: "Ahnaf Farming Logo",
@@ -42,7 +42,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Ahnaf Farming - Fresh Organic Products",
     description: "Discover fresh organic products at Ahnaf Farming. Order online and get quality goods delivered to your door in Bangladesh.",
-    images: ["/icon.png"],
+    images: ["/icon.png"], // Resolved as https://ahnaffarming.com/icon.png with metadataBase
   },
 };
 
@@ -50,13 +50,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Favicon Links */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        {/* Viewport for responsive design */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>

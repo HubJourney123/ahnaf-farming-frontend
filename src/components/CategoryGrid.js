@@ -3,43 +3,19 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react'; // Optional: for a nice arrow icon
+import { ArrowRight } from 'lucide-react';
 
 const CategoryGrid = ({ searchTerm }) => {
-  // Array of categories with names, URLs, and images
   const categories = [
-    {
-      name: 'গুড় (Molasses)',
-      url: '/category/molasses',
-      image: '/images/molasses.png',
-    },
-    {
-      name: 'সরিষার তেল (Mustard Oil)',
-      url: '/category/oil-and-ghee',
-      image: '/images/mustard-oil.png',
-    },
-    {
-      name: 'ঘি (Ghee)',
-      url: '/category/oil-and-ghee',
-      image: '/images/ghee.png',
-    },
-    {
-      name: 'গুঁড়া মসলা (Spices Powder)',
-      url: '/category/spices',
-      image: '/images/spices.png',
-    },
-    {
-      name: 'আম (Mango)',
-      url: '/category/mango',
-      image: '/images/mango.png',
-    },
+    { name: 'গুড় (Molasses)', url: '/category/molasses', image: '/images/molasses.png' },
+    { name: 'সরিষার তেল (Mustard Oil)', url: '/category/oil-and-ghee', image: '/images/mustard-oil.png' },
+    { name: 'ঘি (Ghee)', url: '/category/oil-and-ghee', image: '/images/ghee.png' },
+    { name: 'গুঁড়া মসলা (Spices Powder)', url: '/category/spices', image: '/images/spices.png' },
+    { name: 'আম (Mango)', url: '/category/mango', image: '/images/mango.png' },
   ];
 
-  // Only render if searchTerm is empty
-  if (searchTerm !== '') return null;
-
   useEffect(() => {
-    if (document.querySelector("#category-grid-styles")) return; // Prevent duplicate styles
+    if (document.querySelector("#category-grid-styles")) return;
 
     const styles = `
       @keyframes fadeIn {
@@ -55,7 +31,13 @@ const CategoryGrid = ({ searchTerm }) => {
     styleSheet.id = "category-grid-styles";
     styleSheet.textContent = styles;
     document.head.appendChild(styleSheet);
+
+    return () => {
+      document.head.removeChild(styleSheet);
+    };
   }, []);
+
+  if (searchTerm !== '') return null;
 
   return (
     <section className="py-3 bg-gradient-to-b from-white to-green-50">

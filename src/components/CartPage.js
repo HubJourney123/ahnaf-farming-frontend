@@ -1,31 +1,32 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState, useMemo } from 'react';
 
 const CartPage = () => {
   const router = useRouter();
-  const { productId } = router.query; // Get productId from URL
+  const searchParams = useSearchParams();
+  const productId = searchParams.get('productId'); // Get productId from URL
   const [cart, setCart] = useState([]);
   const deliveryCharge = 150;
 
-  // Sample product data (replace with your actual data source)
-  const products = [
+  // Memoize products to prevent recreation on every render
+  const products = useMemo(() => [
     { id: 1, name: 'গুড় (Molasses)', category: 'Molasses', price: 150, image: '/images/molasses.png' },
     { id: 2, name: 'সরিষার তেল (Mustard Oil)', category: 'Mustard Oil', price: 200, image: '/images/mustard-oil.png' },
     { id: 3, name: 'ঘি (Ghee)', category: 'Ghee', price: 500, image: '/images/ghee.png' },
     { id: 4, name: 'গুঁড়া মসলা (Spices Powder)', category: 'Spices Powder', price: 100, image: '/images/spices.png' },
     { id: 5, name: 'প্রিমিয়াম গুড় (Premium Molasses)', category: 'Molasses', price: 200, image: '/images/premium-molasses.png' },
-  ];
+  ], []);
 
   useEffect(() => {
-    if (productId && products.length > 0) {
+    if (productId) {
       const selectedProduct = products.find((p) => p.id === parseInt(productId));
       if (selectedProduct && !cart.some((item) => item.id === selectedProduct.id)) {
         setCart((prevCart) => [...prevCart, { ...selectedProduct, quantity: 1 }]);
       }
     }
-  }, [productId, products, cart]); // ✅ Added missing dependencies
+  }, [productId, cart, products]); // Dependencies are stable
 
   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const grandTotal = totalPrice + deliveryCharge;
