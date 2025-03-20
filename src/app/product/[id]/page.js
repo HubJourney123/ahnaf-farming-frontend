@@ -1,7 +1,6 @@
 // src/app/product/[id]/page.js
-import ProductDetails from '@/components/ProductDetails';
 import products from '../../../data/products';
-import Navbar from '@/components/Navbar';
+import ClientProductPage from './ClientProductPage'; // New Client Component
 
 export default function ProductPage({ params }) {
   const { id } = params;
@@ -11,15 +10,7 @@ export default function ProductPage({ params }) {
     return <div className="container mx-auto px-4 py-10 text-center text-red-600">Product not found</div>;
   }
 
-  return (
-    <div>
-        <Navbar />
-    
-     <div className="container mx-auto px-8 py-10 min-h-screen bg-green-00">
-       <ProductDetails product={product} />
-     </div>
-    </div>
-  );
+  return <ClientProductPage product={product} />;
 }
 
 export async function generateStaticParams() {

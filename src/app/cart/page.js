@@ -4,7 +4,7 @@ import { useCart } from '../../context/CartContext';
 import { useEffect, useMemo } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
-import Navbar from '@/components/Navbar';
+
 import { Suspense } from 'react'; // Added for Suspense boundary
 
 // Wrap the main component in a Suspense boundary
@@ -42,7 +42,7 @@ const CartPageContent = () => {
 
   return (
     <div>
-      <Navbar /> {/* Added Navbar back */}
+
       <div className="min-h-screen bg-green-50 py-10 px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold text-center text-green-800 mb-8">
           Your Cart

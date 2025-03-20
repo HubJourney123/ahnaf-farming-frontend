@@ -1,5 +1,6 @@
 // src/components/ProductDetails.js
 'use client';
+import { useState } from 'react'; // Added for touch state
 import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingCart, MessageCircle } from 'lucide-react';
@@ -9,12 +10,23 @@ const ProductDetails = ({ product }) => {
   const { addToCart } = useCart();
   const secondImage = product.image.replace('.png', '2.png'); // e.g., powdergur.png -> powdergur2.png
 
+  // State to track touch on interactive elements
+  const [isImageTouched, setIsImageTouched] = useState(false);
+  const [isAddToCartTouched, setIsAddToCartTouched] = useState(false);
+  const [isGoToCartTouched, setIsGoToCartTouched] = useState(false);
+  const [isWhatsAppTouched, setIsWhatsAppTouched] = useState(false);
+
   return (
     <div className="flex flex-col gap-8">
       {/* Main Content: Image and Details/Buttons Side-by-Side on Large Screens */}
       <div className="flex flex-col md:flex-row gap-8">
         {/* Image Section */}
-        <div className="relative w-full md:w-1/2">
+        <div
+          className="relative w-full md:w-1/2"
+          onTouchStart={() => setIsImageTouched(true)}
+          onTouchEnd={() => setIsImageTouched(false)}
+          onTouchCancel={() => setIsImageTouched(false)}
+        >
           <div className="relative w-full aspect-square overflow-hidden rounded-xl shadow-lg border-4 border-green-700">
             <Image
               src={product.image}
@@ -27,7 +39,9 @@ const ProductDetails = ({ product }) => {
               src={secondImage}
               alt={`${product.name} - Image 2`}
               fill
-              className="object-cover absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity duration-300"
+              className={`object-cover absolute top-0 left-0 transition-opacity duration-300 ${
+                isImageTouched ? 'opacity-100' : 'opacity-0 hover:opacity-100'
+              }`}
             />
           </div>
         </div>
@@ -58,7 +72,14 @@ const ProductDetails = ({ product }) => {
           <div className="w-full max-w-md flex flex-col gap-4">
             <button
               onClick={() => addToCart(product)}
-              className="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold hover:bg-amber-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+              className={`w-full bg-amber-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 shadow-md transform ${
+                isAddToCartTouched
+                  ? 'bg-amber-700 shadow-lg -translate-y-1'
+                  : 'hover:bg-amber-700 hover:shadow-lg hover:-translate-y-1'
+              }`}
+              onTouchStart={() => setIsAddToCartTouched(true)}
+              onTouchEnd={() => setIsAddToCartTouched(false)}
+              onTouchCancel={() => setIsAddToCartTouched(false)}
             >
               <div className="flex items-center justify-center space-x-2">
                 <ShoppingCart size={20} />
@@ -67,7 +88,14 @@ const ProductDetails = ({ product }) => {
             </button>
             <Link
               href="/cart"
-              className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 text-center"
+              className={`w-full bg-green-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 shadow-md transform text-center ${
+                isGoToCartTouched
+                  ? 'bg-green-700 shadow-lg -translate-y-1'
+                  : 'hover:bg-green-700 hover:shadow-lg hover:-translate-y-1'
+              }`}
+              onTouchStart={() => setIsGoToCartTouched(true)}
+              onTouchEnd={() => setIsGoToCartTouched(false)}
+              onTouchCancel={() => setIsGoToCartTouched(false)}
             >
               Go to Cart
             </Link>
@@ -75,7 +103,14 @@ const ProductDetails = ({ product }) => {
               href="https://wa.me/+8801753388992"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center space-x-2"
+              className={`w-full bg-green-500 text-white py-3 rounded-lg font-semibold transition-all duration-300 shadow-md transform flex items-center justify-center space-x-2 ${
+                isWhatsAppTouched
+                  ? 'bg-green-600 shadow-lg -translate-y-1'
+                  : 'hover:bg-green-600 hover:shadow-lg hover:-translate-y-1'
+              }`}
+              onTouchStart={() => setIsWhatsAppTouched(true)}
+              onTouchEnd={() => setIsWhatsAppTouched(false)}
+              onTouchCancel={() => setIsWhatsAppTouched(false)}
             >
               <MessageCircle size={20} />
               <span>WhatsApp Us</span>
