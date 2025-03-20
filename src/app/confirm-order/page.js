@@ -41,7 +41,7 @@ export default function ConfirmOrderPage() {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/send-order', {
+      const response = await fetch('https://ahnaf-farming-backend.onrender.com/api/send-order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ export default function ConfirmOrderPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 placeholder:text-gray-600"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                         placeholder="আপনার নাম লিখুন"
                       />
                     </div>
@@ -122,7 +122,7 @@ export default function ConfirmOrderPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 placeholder:text-gray-600"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                         placeholder="আপনার ফোন নম্বর লিখুন (e.g., 01712345678)"
                       />
                     </div>
@@ -136,7 +136,7 @@ export default function ConfirmOrderPage() {
                         value={formData.division}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 placeholder:text-gray-600"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                         placeholder="আপনার ডিভিসন লিখুন"
                       />
                     </div>
@@ -150,7 +150,7 @@ export default function ConfirmOrderPage() {
                         value={formData.district}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 placeholder:text-gray-600"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                         placeholder="আপনার জেলা লিখুন"
                       />
                     </div>
@@ -164,7 +164,7 @@ export default function ConfirmOrderPage() {
                         value={formData.upazila}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 placeholder:text-gray-600"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                         placeholder="আপনার উপজেলা লিখুন"
                       />
                     </div>
@@ -177,7 +177,7 @@ export default function ConfirmOrderPage() {
                         value={formData.detailedLocation}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 h-24 resize-none placeholder:text-gray-600"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 h-24 resize-none"
                         placeholder="আপনার বিস্তারিত ঠিকানা লিখুন (e.g., হাউস নং, রোড নং, এলাকা)"
                       />
                     </div>
@@ -191,7 +191,7 @@ export default function ConfirmOrderPage() {
                         value={formData.transactionId}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 placeholder:text-gray-600"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                         placeholder="আপনার লেনদেন আইডি লিখুন"
                       />
                     </div>
