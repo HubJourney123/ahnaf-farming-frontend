@@ -1,10 +1,11 @@
-// src/components/OilAndGheeGrid.js
 'use client';
+
 import { useEffect } from 'react';
+import Image from 'next/image';
 import ProductCard from './ProductCard';
 
 const OilAndGheeGrid = ({ products, addToCart, searchTerm }) => {
-  // Filter products to only include Oil-and-Ghee category
+  // Filter products by Oil and Ghee category
   const oilAndGheeProducts = products.filter((product) => product.category === 'oil-and-ghee');
 
   // Further filter by search term if provided
@@ -14,13 +15,9 @@ const OilAndGheeGrid = ({ products, addToCart, searchTerm }) => {
       )
     : oilAndGheeProducts;
 
-  // Debug: Log the filtered products
-  console.log('OilAndGheeGrid Filtered Products:', filteredOilAndGhee);
-
-  // Only render the section if there are matching products
-  if (filteredOilAndGhee.length === 0) return null;
-
   useEffect(() => {
+    if (document.querySelector("#oil-and-ghee-grid-styles")) return; // Prevent duplicate styles
+
     const styles = `
       @keyframes fadeIn {
         from { opacity: 0; }
@@ -30,13 +27,15 @@ const OilAndGheeGrid = ({ products, addToCart, searchTerm }) => {
         animation: fadeIn 1s ease-in-out;
       }
     `;
-    if (!document.querySelector('#oil-and-ghee-grid-styles')) {
-      const styleSheet = document.createElement('style');
-      styleSheet.id = 'oil-and-ghee-grid-styles';
-      styleSheet.textContent = styles;
-      document.head.appendChild(styleSheet);
-    }
+    
+    const styleSheet = document.createElement("style");
+    styleSheet.id = "oil-and-ghee-grid-styles";
+    styleSheet.textContent = styles;
+    document.head.appendChild(styleSheet);
   }, []);
+
+  // Only render if there are matching products
+  if (filteredOilAndGhee.length === 0) return null;
 
   return (
     <section className="py-12 bg-gradient-to-b from-green-50 to-white">

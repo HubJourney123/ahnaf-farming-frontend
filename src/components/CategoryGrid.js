@@ -1,43 +1,46 @@
-// src/components/CategoryGrid.js
-'use client'; // Since this will use Link for navigation and client-side style injection
+'use client';
+
 import { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react'; // Optional: for a nice arrow icon
 
 const CategoryGrid = ({ searchTerm }) => {
   // Array of categories with names, URLs, and images
   const categories = [
     {
-        name: 'গুড় (Molasses)',
-        url: '/category/molasses',
-        image: '/images/molasses.png', // Ensure these image paths exist in public/images/
-      },
-      {
-        name: 'সরিষার তেল (Mustard Oil)',
-        url: '/category/oil-and-ghee',
-        image: '/images/mustard-oil.png',
-      },
-      {
-        name: 'ঘি (Ghee)',
-        url: '/category/oil-and-ghee',
-        image: '/images/ghee.png',
-      },
-      {
-        name: 'গুঁড়া মসলা (Spices Powder)',
-        url: '/category/spices',
-        image: '/images/spices.png',
-      },
-      {
-        name: 'আম (Mango)',
-        url: '/category/mango',
-        image: '/images/mango.png',
-      },
+      name: 'গুড় (Molasses)',
+      url: '/category/molasses',
+      image: '/images/molasses.png',
+    },
+    {
+      name: 'সরিষার তেল (Mustard Oil)',
+      url: '/category/oil-and-ghee',
+      image: '/images/mustard-oil.png',
+    },
+    {
+      name: 'ঘি (Ghee)',
+      url: '/category/oil-and-ghee',
+      image: '/images/ghee.png',
+    },
+    {
+      name: 'গুঁড়া মসলা (Spices Powder)',
+      url: '/category/spices',
+      image: '/images/spices.png',
+    },
+    {
+      name: 'আম (Mango)',
+      url: '/category/mango',
+      image: '/images/mango.png',
+    },
   ];
 
   // Only render if searchTerm is empty
   if (searchTerm !== '') return null;
 
   useEffect(() => {
+    if (document.querySelector("#category-grid-styles")) return; // Prevent duplicate styles
+
     const styles = `
       @keyframes fadeIn {
         from { opacity: 0; }
@@ -47,13 +50,12 @@ const CategoryGrid = ({ searchTerm }) => {
         animation: fadeIn 1s ease-in-out;
       }
     `;
-    if (!document.querySelector('#category-grid-styles')) {
-      const styleSheet = document.createElement('style');
-      styleSheet.id = 'category-grid-styles';
-      styleSheet.textContent = styles;
-      document.head.appendChild(styleSheet);
-    }
-  }, []); // Empty dependency array ensures this runs only once on mount
+    
+    const styleSheet = document.createElement("style");
+    styleSheet.id = "category-grid-styles";
+    styleSheet.textContent = styles;
+    document.head.appendChild(styleSheet);
+  }, []);
 
   return (
     <section className="py-3 bg-gradient-to-b from-white to-green-50">
@@ -69,9 +71,11 @@ const CategoryGrid = ({ searchTerm }) => {
               className="group relative block overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white"
             >
               <div className="relative w-full h-48 overflow-hidden">
-                <img
+                <Image
                   src={category.image}
                   alt={category.name}
+                  width={300}
+                  height={200}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

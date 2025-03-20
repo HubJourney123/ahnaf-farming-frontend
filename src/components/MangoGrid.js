@@ -1,9 +1,11 @@
-// src/components/MangoGrid.js
 'use client';
+
 import { useEffect } from 'react';
+import Image from 'next/image';
 import ProductCard from './ProductCard';
 
 const MangoGrid = ({ products, addToCart, searchTerm }) => {
+  // Filter products by Mango category
   const mangoProducts = products.filter((product) => product.category === 'Mango');
 
   // Further filter by search term if provided
@@ -13,10 +15,9 @@ const MangoGrid = ({ products, addToCart, searchTerm }) => {
       )
     : mangoProducts;
 
-  // Only render the section if there are matching products
-  if (filteredMango.length === 0) return null;
-
   useEffect(() => {
+    if (document.querySelector("#mango-grid-styles")) return; // Prevent duplicate styles
+
     const styles = `
       @keyframes fadeIn {
         from { opacity: 0; }
@@ -26,13 +27,15 @@ const MangoGrid = ({ products, addToCart, searchTerm }) => {
         animation: fadeIn 1s ease-in-out;
       }
     `;
-    if (!document.querySelector('#mango-grid-styles')) {
-      const styleSheet = document.createElement('style');
-      styleSheet.id = 'mango-grid-styles';
-      styleSheet.textContent = styles;
-      document.head.appendChild(styleSheet);
-    }
-  }, []); // Empty dependency array ensures this runs only once on mount
+    
+    const styleSheet = document.createElement("style");
+    styleSheet.id = "mango-grid-styles";
+    styleSheet.textContent = styles;
+    document.head.appendChild(styleSheet);
+  }, []);
+
+  // Only render if there are matching products
+  if (filteredMango.length === 0) return null;
 
   return (
     <section className="py-12 bg-gradient-to-b from-green-50 to-white">

@@ -1,6 +1,6 @@
-// pages/cart.js
 'use client';
-import { useRouter } from 'next/router';
+
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const CartPage = () => {
@@ -19,13 +19,13 @@ const CartPage = () => {
   ];
 
   useEffect(() => {
-    if (productId) {
+    if (productId && products.length > 0) {
       const selectedProduct = products.find((p) => p.id === parseInt(productId));
-      if (selectedProduct && !cart.find((item) => item.id === selectedProduct.id)) {
-        setCart([{ ...selectedProduct, quantity: 1 }]);
+      if (selectedProduct && !cart.some((item) => item.id === selectedProduct.id)) {
+        setCart((prevCart) => [...prevCart, { ...selectedProduct, quantity: 1 }]);
       }
     }
-  }, [productId]);
+  }, [productId, products, cart]); // ✅ Added missing dependencies
 
   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const grandTotal = totalPrice + deliveryCharge;
@@ -44,7 +44,6 @@ const CartPage = () => {
                 <span className="text-amber-600">৳ {item.price * item.quantity}</span>
               </li>
             ))}
-            
           </ul>
           <div className="mt-6">
             <p className="text-green-800">Subtotal: ৳ {totalPrice}</p>

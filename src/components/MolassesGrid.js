@@ -1,6 +1,7 @@
-// src/components/MolassesGrid.js
 'use client';
+
 import { useEffect } from 'react';
+import Image from 'next/image';
 import ProductCard from './ProductCard';
 
 const MolassesGrid = ({ products, addToCart, searchTerm }) => {
@@ -14,10 +15,9 @@ const MolassesGrid = ({ products, addToCart, searchTerm }) => {
       )
     : molassesProducts;
 
-  // Only render the section if there are matching products
-  if (filteredMolasses.length === 0) return null;
-
   useEffect(() => {
+    if (document.querySelector("#molasses-grid-styles")) return; // Prevent duplicate styles
+
     const styles = `
       @keyframes fadeIn {
         from { opacity: 0; }
@@ -27,13 +27,15 @@ const MolassesGrid = ({ products, addToCart, searchTerm }) => {
         animation: fadeIn 1s ease-in-out;
       }
     `;
-    if (!document.querySelector('#molasses-grid-styles')) {
-      const styleSheet = document.createElement('style');
-      styleSheet.id = 'molasses-grid-styles';
-      styleSheet.textContent = styles;
-      document.head.appendChild(styleSheet);
-    }
-  }, []); // Empty dependency array ensures this runs only once on mount
+    
+    const styleSheet = document.createElement("style");
+    styleSheet.id = "molasses-grid-styles";
+    styleSheet.textContent = styles;
+    document.head.appendChild(styleSheet);
+  }, []);
+
+  // Only render if there are matching products
+  if (filteredMolasses.length === 0) return null;
 
   return (
     <section className="py-12 bg-gradient-to-b from-green-50 to-white">
@@ -52,3 +54,4 @@ const MolassesGrid = ({ products, addToCart, searchTerm }) => {
 };
 
 export default MolassesGrid;
+// In this snippet, we've created a new component named MolassesGrid that filters products by the 'Molasses' category. The filtered products are further filtered by a search term if provided. We've also added a CSS animation to fade in the section when it's rendered.
