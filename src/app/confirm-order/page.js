@@ -88,9 +88,8 @@ export default function ConfirmOrderPage() {
                       অনলাইন পেমেন্ট করতে নিচের নম্বরগুলো ব্যবহার করুন:
                     </p>
                     <ul className="list-none text-green-700 text-lg mt-2 space-y-2">
-                      <li>বিকাশ (Personal) :- 01753388992 (Send Money)</li>
-                      <li>নগদ (Personal) :- 01753388992 (Send Money)</li>
-                      <li>রকেট (Personal) :- 01753388992 (Send Money)</li>
+                      <li>বিকাশ/নগদ/রকেট (Personal) :- 01753388992 (Send Money)</li>
+                      
                     </ul>
                     <p className="text-green-700 text-lg mt-4">
                       উপরের নম্বরে টাকা পাঠিয়ে আপনার ট্রাঞ্জেকশন আইডি সাবমিট করে অর্ডার কনফার্ম করুন।
@@ -126,20 +125,7 @@ export default function ConfirmOrderPage() {
                         placeholder="আপনার ফোন নম্বর লিখুন (e.g., 01712345678)"
                       />
                     </div>
-                    <div>
-                      <label className="block text-green-800 font-semibold mb-2">
-                        ডিভিসন (Division)
-                      </label>
-                      <input
-                        type="text"
-                        name="division"
-                        value={formData.division}
-                        onChange={handleChange}
-                        required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                        placeholder="আপনার ডিভিসন লিখুন"
-                      />
-                    </div>
+                    
                     <div>
                       <label className="block text-green-800 font-semibold mb-2">
                         জেলা (District)
