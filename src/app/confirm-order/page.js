@@ -1,9 +1,8 @@
 'use client';
 import { useCart } from '../../context/CartContext';
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react'; // Added useEffect for countdown
 import { useRouter } from 'next/navigation';
-import Image from 'next/image'; // Added import for Next.js Image component
+import Image from 'next/image';
 
 export default function ConfirmOrderPage() {
   const { cart } = useCart();
@@ -20,9 +19,11 @@ export default function ConfirmOrderPage() {
     district: '',
     upazila: '',
     transactionId: '',
+    yourIdentity: '', // Added new field
   });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
+  const [countdown, setCountdown] = useState(null); // Countdown state
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,6 +32,7 @@ export default function ConfirmOrderPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+    setCountdown(20); // Start countdown at 20 seconds
 
     const data = {
       ...formData,
@@ -59,6 +61,17 @@ export default function ConfirmOrderPage() {
       setError('An error occurred while placing the order. Please try again.');
     }
   };
+
+  // Countdown effect
+  useEffect(() => {
+    if (countdown === null || countdown <= 0) return;
+
+    const timer = setInterval(() => {
+      setCountdown((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer); // Cleanup on unmount or countdown change
+  }, [countdown]);
 
   return (
     <div>
@@ -89,7 +102,6 @@ export default function ConfirmOrderPage() {
                     </p>
                     <ul className="list-none text-green-700 text-lg mt-2 space-y-2">
                       <li>বিকাশ/নগদ/রকেট (Personal) :- 01753388992 (Send Money)</li>
-                      
                     </ul>
                     <p className="text-green-700 text-lg mt-4">
                       উপরের নম্বরে টাকা পাঠিয়ে আপনার ট্রাঞ্জেকশন আইডি সাবমিট করে অর্ডার কনফার্ম করুন।
@@ -107,7 +119,7 @@ export default function ConfirmOrderPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
                         placeholder="আপনার নাম লিখুন"
                       />
                     </div>
@@ -121,7 +133,7 @@ export default function ConfirmOrderPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
                         placeholder="আপনার ফোন নম্বর লিখুন (e.g., 01712345678)"
                       />
                     </div>
@@ -136,7 +148,7 @@ export default function ConfirmOrderPage() {
                         value={formData.district}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
                         placeholder="আপনার জেলা লিখুন"
                       />
                     </div>
@@ -150,7 +162,7 @@ export default function ConfirmOrderPage() {
                         value={formData.upazila}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
                         placeholder="আপনার উপজেলা লিখুন"
                       />
                     </div>
@@ -163,7 +175,7 @@ export default function ConfirmOrderPage() {
                         value={formData.detailedLocation}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 h-24 resize-none"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 h-24 resize-none bg-white text-gray-900"
                         placeholder="আপনার বিস্তারিত ঠিকানা লিখুন (e.g., হাউস নং, রোড নং, এলাকা)"
                       />
                     </div>
@@ -177,8 +189,22 @@ export default function ConfirmOrderPage() {
                         value={formData.transactionId}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
                         placeholder="আপনার লেনদেন আইডি লিখুন"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-green-800 font-semibold mb-2">
+                        আপনার পরিচয় (Your Identity)
+                      </label>
+                      <input
+                        type="text"
+                        name="yourIdentity"
+                        value={formData.yourIdentity}
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
+                        placeholder="e.g., CE 2k10 or ME 2k14 or others"
                       />
                     </div>
 
@@ -192,8 +218,8 @@ export default function ConfirmOrderPage() {
                             <Image
                               src={item.image}
                               alt={item.name}
-                              width={80} // Set explicit width (matches original w-20)
-                              height={80} // Set explicit height (matches original h-20)
+                              width={80}
+                              height={80}
                               className="object-cover rounded-lg border border-green-200"
                             />
                             <div>
@@ -232,6 +258,14 @@ export default function ConfirmOrderPage() {
                       >
                         Submit Order
                       </button>
+                      <p className="text-green-800 text-sm mt-4 text-center">
+                        Submit Order বাটন প্রেস করার পর ২০ সেকেন্ড অপেক্ষা করুন। আপনার অর্ডার ইনফরমেশন পাঠানো হচ্ছে।
+                        {countdown !== null && countdown > 0 && (
+                          <span className="block mt-2 text-amber-600">
+                            অবশিষ্ট সময়: {countdown} সেকেন্ড
+                          </span>
+                        )}
+                      </p>
                     </div>
                   </form>
                 </div>
