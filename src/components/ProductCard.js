@@ -25,7 +25,10 @@ const ProductCard = ({ product, addToCart }) => {
             </div>
             <p className="text-green-600 text-sm mt-1">পরিমাণ: {product.পরিমাণ}</p>
             <p className="text-green-600 text-sm mt-1">
-              ডেলিভারি চার্জ: {product.deliveryCharge === 0 ? 'ফ্রি' : `৳ ${product.deliveryCharge}`}
+              ডেলিভারি চার্জ:{' '}
+              <span className={product.deliveryCharge === 0 ? 'text-amber-600' : 'text-green-600'}>
+                {product.deliveryCharge === 0 ? 'ফ্রি' : `৳ ${product.deliveryCharge}`}
+              </span>
             </p>
             <p className="text-green-600 text-sm mt-1">
               {product.availability === 'available' ? 'Available' : 'Unavailable'}
