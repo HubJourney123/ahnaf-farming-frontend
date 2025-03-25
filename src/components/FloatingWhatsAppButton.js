@@ -19,8 +19,8 @@ const FloatingWhatsAppButton = () => {
       }
       .whatsapp-button {
         position: fixed;
-        bottom: 6px;
-        right: 6px;
+        bottom: 10px;
+        right: 10px;
         background-color: #25D366;
         color: white;
         border-radius: 50%;
@@ -66,7 +66,7 @@ const FloatingWhatsAppButton = () => {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-all duration-300 z-50 whatsapp-button"
+      className="fixed bottom-10 right-10 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-all duration-300 z-50 whatsapp-button"
       aria-label="Contact us on WhatsApp"
     >
       <Image
