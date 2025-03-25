@@ -1,7 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image'; // Added import
+import Image from 'next/image';
 import { Menu, ShoppingCart, MessageCircle, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
@@ -17,6 +17,24 @@ const Navbar = () => {
   };
 
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const menuRef = useRef(null); // Ref to track the menu element
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Add event listener to the document
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Cleanup event listener on unmount
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]); // Dependency on isMenuOpen to re-run when it changes
 
   return (
     <nav className={`${colors.bg} shadow-lg sticky top-0 z-50`}>
@@ -49,7 +67,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className={`${colors.menuBg} px-4 py-2 md:hidden`}>
+        <div ref={menuRef} className={`${colors.menuBg} px-4 py-2 md:hidden`}>
           <ul className="space-y-2">
             {[
               { name: 'গুড় (Molasses)', href: '/category/molasses' },
