@@ -43,7 +43,7 @@ export default function ConfirmOrderPage() {
     };
 
     try {
-      const response = await fetch('https://ahnaf-farming-backend.onrender.com/api/send-order', {
+      const response = await fetch('https://ahnaf-farming-backend-gqds.onrender.com/api/send-order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
