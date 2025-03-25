@@ -28,7 +28,7 @@ const ProductCard = ({ product, addToCart }) => {
               ডেলিভারি চার্জ: {product.deliveryCharge === 0 ? 'ফ্রি' : `৳ ${product.deliveryCharge}`}
             </p>
             <p className="text-green-600 text-sm mt-1">
-              প্রাপ্যতা: {product.availability === 'available' ? 'উপলব্ধ' : 'অনুপলব্ধ'}
+              {product.availability === 'available' ? 'Available' : 'Unavailable'}
             </p>
           </div>
         </div>
