@@ -31,7 +31,9 @@ const ProductCard = ({ product, addToCart }) => {
               </span>
             </p>
             <p className="text-green-600 text-sm mt-1">
-              {product.availability === 'available' ? 'Available' : 'Unavailable'}
+              <span className={product.availability === 'available' ? 'text-green-800' : 'text-red-600'}>
+                {product.availability === 'available' ? 'Available' : 'Not Available'}
+              </span>
             </p>
           </div>
         </div>
