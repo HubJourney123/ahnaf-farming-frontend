@@ -13,7 +13,7 @@ const CartPageContent = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const productId = searchParams.get('productId');
-  const deliveryCharge = 150;
+  const deliveryCharge = 0;
 
   // Memoize products to prevent recreation on every render
   const products = useMemo(() => [
