@@ -106,6 +106,9 @@ export default function ConfirmOrderPage() {
                     <p className="text-green-700 text-lg mt-4">
                       উপরের নম্বরে টাকা পাঠিয়ে আপনার ট্রাঞ্জেকশন আইডি সাবমিট করে অর্ডার কনফার্ম করুন।
                     </p>
+                    <p className="text-green-800 text-bold text-lg mt-4">
+                      সর্বনিম্ন ২০০ টাকা অগ্রিম Send Money করা আবশ্যক
+                    </p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
