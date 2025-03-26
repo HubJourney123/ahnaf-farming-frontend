@@ -41,7 +41,12 @@ const ProductCard = ({ product, addToCart }) => {
       <div className="p-4 pt-0">
         <button
           onClick={() => addToCart(product)}
-          className="w-full flex items-center justify-center space-x-2 bg-green-800 text-white py-2 rounded-lg hover:bg-amber-600 transition-colors duration-300"
+          disabled={product.availability !== 'available'} // Disable if not available
+          className={`w-full flex items-center justify-center space-x-2 py-2 rounded-lg transition-colors duration-300 ${
+            product.availability === 'available'
+              ? 'bg-green-800 text-white hover:bg-amber-600'
+              : 'bg-gray-400 text-gray-200 cursor-not-allowed'
+          }`}
         >
           <ShoppingCart size={20} />
           <span>Add to Cart</span>
