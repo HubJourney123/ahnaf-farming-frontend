@@ -14,16 +14,16 @@ const geistMono = Geist_Mono({
 
 // Enhanced metadata for SEO with metadataBase
 export const metadata = {
-  metadataBase: new URL("https://ahnaffarming.com"), // Replace with your actual domain
-  title: "Ahnaf Farming - Fresh Organic Products",
+  metadataBase: new URL("https://ahnaffarming.vercel.app"), // Replace with your actual domain
+  title: "Ahnaf Farming - Symbol of Purity",
   description: "Discover fresh organic products at Ahnaf Farming. Order online and get quality goods delivered to your door in Bangladesh.",
-  keywords: "organic products, Ahnaf Farming, fresh food, online grocery, Bangladesh farming, healthy food",
+  keywords: "organic products, Ahnaf Farming, gur, amropali, khirsapat, ghee, langra, sorishar tel, tel, mustard oil, danadar gur, patali gur, powder gur, moshla, KUET, Kuetian mango, mango, chapai mango, rajshahi mango, online grocery, Bangladesh farming, healthy food",
   robots: "index, follow",
   alternates: {
-    canonical: "https://ahnaffarming.com", // Matches metadataBase
+    canonical: "https://ahnaffarming.vercel.app", // Matches metadataBase
   },
   openGraph: {
-    title: "Ahnaf Farming - Fresh Organic Products",
+    title: "Ahnaf Farming - Symbol of Purity",
     description: "Discover fresh organic products at Ahnaf Farming. Order online and get quality goods delivered to your door in Bangladesh.",
     url: "https://ahnaffarming.com",
     siteName: "Ahnaf Farming",
