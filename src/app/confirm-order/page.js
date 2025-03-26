@@ -32,7 +32,7 @@ export default function ConfirmOrderPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-    setCountdown(20); // Start countdown at 20 seconds
+    setCountdown(25); // Start countdown at 25 seconds
 
     const data = {
       ...formData,
@@ -262,7 +262,7 @@ export default function ConfirmOrderPage() {
                         Submit Order
                       </button>
                       <p className="text-green-800 text-sm mt-4 text-center">
-                        Submit Order বাটন প্রেস করার পর ২০ সেকেন্ড অপেক্ষা করুন। আপনার অর্ডার ইনফরমেশন পাঠানো হচ্ছে।
+                        Submit Order বাটন প্রেস করার পর 25 সেকেন্ড অপেক্ষা করুন। আপনার অর্ডার ইনফরমেশন পাঠানো হচ্ছে।
                         {countdown !== null && countdown > 0 && (
                           <span className="block mt-2 text-amber-600">
                             অবশিষ্ট সময়: {countdown} সেকেন্ড
