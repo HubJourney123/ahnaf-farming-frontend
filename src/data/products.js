@@ -29,7 +29,7 @@ const products = [
     price: 600,
     image: '/gur/pataligur.png',
     details: 'এটি আখ থেকে তৈরি পাটালি গুড়, যা অদ্বিতীয় স্বাদ ও গঠনের জন্য পরিচিত। ঐতিহ্যবাহী বাঙালি মিষ্টি এবং স্বাস্থ্যকর স্ন্যাক হিসেবে ব্যবহৃত হয়। প্রতি ১০০ গ্রামে প্রায় ৩৮৫ ক্যালোরি, ৯৮ গ্রাম কার্বোহাইড্রেট, এবং আয়রন ও ভিটামিন B6-এর উৎস।',
-    availability: 'unavailable',
+    availability: 'available',
     পরিমাণ: '২ কেজি',
     deliveryCharge: 0, // Free delivery
   },
