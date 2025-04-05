@@ -51,7 +51,7 @@ const products = [
     price: 120,
     image: '/spices/turmericpowder.png',
     details: 'জৈব হলুদ গুঁড়া, যা স্বাস্থ্য উপকারিতার জন্য বিখ্যাত। এটি এন্টিঅক্সিডেন্ট এবং পরিষ্কার ত্বকের জন্য উপযোগী। প্রতি ১০০ গ্রামে প্রায় ৩১২ ক্যালোরি, ৬৫ গ্রাম কার্বোহাইড্রেট, ৮ গ্রাম প্রোটিন, এবং কারকুমিন ও আয়রন সমৃদ্ধ।',
-    availability: 'unavailable',
+    availability: 'available',
     পরিমাণ: '১০০ গ্রাম',
     deliveryCharge: 0, // Free delivery
   },
