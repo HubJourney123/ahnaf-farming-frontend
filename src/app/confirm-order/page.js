@@ -107,7 +107,7 @@ export default function ConfirmOrderPage() {
                       উপরের নম্বরে টাকা পাঠিয়ে আপনার ট্রাঞ্জেকশন আইডি সাবমিট করে অর্ডার কনফার্ম করুন।
                     </p>
                     <p className="text-green-800 text-bold text-lg mt-4">
-                      সর্বনিম্ন ২০০ টাকা অগ্রিম Send Money করা আবশ্যক
+                      Minimum ২০০ টাকা অথবা ফুল পেমেন্ট অগ্রিম Send Money করা আবশ্যক
                     </p>
                   </div>
 
@@ -157,7 +157,7 @@ export default function ConfirmOrderPage() {
                     </div>
                     <div>
                       <label className="block text-green-800 font-semibold mb-2">
-                        উপজেলা (Upazila)
+                        উপজেলা/থানা (Upazila or Thana)
                       </label>
                       <input
                         type="text"
@@ -166,7 +166,7 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
-                        placeholder="আপনার উপজেলা লিখুন"
+                        placeholder="আপনার উপজেলা বা থানা লিখুন"
                       />
                     </div>
                     <div>
@@ -207,7 +207,7 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
-                        placeholder="e.g., CE 2k10 or ME 2k14 or others"
+                        placeholder="e.g., ME 2K05 or others"
                       />
                     </div>
 
