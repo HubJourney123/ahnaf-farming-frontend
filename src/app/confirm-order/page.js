@@ -1,13 +1,24 @@
 'use client';
 import { useCart } from '../../context/CartContext';
-import { useState, useEffect } from 'react'; // Added useEffect for countdown
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { products } from '../../data/products'; // Import products data
 
 export default function ConfirmOrderPage() {
   const { cart } = useCart();
   const router = useRouter();
-  const deliveryCharge = 150;
+
+  // Calculate delivery charge dynamically based on cart items
+  const deliveryCharge = cart.reduce((sum, item) => {
+    // Find the product in products.js to get its deliveryCharge
+    const product = products.find((p) => p.id === item.id);
+    // If product is found, use its deliveryCharge; otherwise, default to 0
+    const itemDeliveryCharge = product ? product.deliveryCharge : 0;
+    // Multiply by quantity if delivery charge is per item (adjust logic as needed)
+    return sum + itemDeliveryCharge * item.quantity;
+  }, 0);
+
   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const grandTotal = totalPrice + deliveryCharge;
 
@@ -19,11 +30,11 @@ export default function ConfirmOrderPage() {
     district: '',
     upazila: '',
     transactionId: '',
-    yourIdentity: '', // Added new field
+    yourIdentity: '',
   });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
-  const [countdown, setCountdown] = useState(null); // Countdown state
+  const [countdown, setCountdown] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -32,13 +43,13 @@ export default function ConfirmOrderPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-    setCountdown(25); // Start countdown at 25 seconds
+    setCountdown(25);
 
     const data = {
       ...formData,
       cart,
       totalPrice,
-      deliveryCharge,
+      deliveryCharge, // This will now be dynamic
       grandTotal,
     };
 
@@ -70,7 +81,7 @@ export default function ConfirmOrderPage() {
       setCountdown((prev) => prev - 1);
     }, 1000);
 
-    return () => clearInterval(timer); // Cleanup on unmount or countdown change
+    return () => clearInterval(timer);
   }, [countdown]);
 
   return (
