@@ -1,5 +1,5 @@
 // src/data/products.js
-const products = [
+export const products = [
   {
     id: 'M1',
     name: 'আখের পাউডার গুড় (Powder Gur)',
