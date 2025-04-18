@@ -24,7 +24,7 @@ export default function Home() {
     <div className="min-h-screen bg-green-50">
       
       <Carousel />
-      <section className="p-4">
+      <section className="p-4 bg:white">
         <SearchBar onSearch={handleSearch} />
       </section>
       <section className="p-0">
