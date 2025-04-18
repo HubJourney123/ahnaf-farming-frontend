@@ -19,7 +19,7 @@ const SearchPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-green-50 p-4">
+    <div className="min-h-screen bg-white p-4">
       <div className="flex justify-center mb-8">
         <input
           type="text"
