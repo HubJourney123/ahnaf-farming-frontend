@@ -51,7 +51,7 @@ const ProductDetails = ({ product }) => {
           <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">{product.name}</h1>
           <p className="text-green-600 text-lg mb-4">{product.category}</p>
           <p className="text-amber-600 text-2xl font-bold mb-6 whitespace-nowrap">
-            ৳ {product.price}/{product.quantity}
+            ৳ {product.price}/{product.পরিমাণ}
             
           </p>
 
