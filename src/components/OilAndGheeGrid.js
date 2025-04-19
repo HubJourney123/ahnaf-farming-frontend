@@ -38,7 +38,7 @@ const OilAndGheeGrid = ({ products, addToCart, searchTerm }) => {
   if (filteredOilAndGhee.length === 0) return null;
 
   return (
-    <section className="py-12 bg-gradient-to-b from-green-50 to-white">
+    <section className="py-12 bg-gradient-to-b from-white to-green-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-green-800 mb-10 animate-fade-in">
           সরিষার তেল ও ঘি পণ্যসমূহ (Mustard Oil & Ghee Products)
