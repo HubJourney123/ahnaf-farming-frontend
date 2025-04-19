@@ -51,21 +51,8 @@ const ProductDetails = ({ product }) => {
           <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">{product.name}</h1>
           <p className="text-green-600 text-lg mb-4">{product.category}</p>
           <p className="text-amber-600 text-2xl font-bold mb-6 whitespace-nowrap">
-            ৳ {product.price}
-            {(() => {
-              switch (product.category) {
-                case 'Molasses':
-                  return '/kg';
-                case 'Mango':
-                  return '/প্রতি মণ';
-                case 'Spices':
-                  return '/pack';
-                case 'oil-and-ghee':
-                  return product.name.includes('ঘি') || product.name.includes('ghee') ? '/kg' : '/5 litre';
-                default:
-                  return '/kg';
-              }
-            })()}
+            ৳ {product.price}/{product.quantity}
+            
           </p>
 
           {/* Buttons */}
