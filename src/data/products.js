@@ -74,7 +74,7 @@ const products = [
   },
   {
     id: 'MG1-11',
-    name: 'ক্ষীরসাপাত/হিমসাগর আম (11 KG)',
+    name: 'ক্ষীরসাপাত/হিমসাগর (11 KG)',
     en:'(Khirsapat / Himsagar Mango)',
     category: 'Mango',
     price: 2500,
@@ -86,7 +86,7 @@ const products = [
   },
   {
     id: 'MG1-22',
-    name: 'ক্ষীরসাপাত/হিমসাগর আম (22 KG) ',
+    name: 'ক্ষীরসাপাত/হিমসাগর (22 KG) ',
     en:'(Khirsapat / Himsagar Mango)',
     category: 'Mango',
     price: 5000,
