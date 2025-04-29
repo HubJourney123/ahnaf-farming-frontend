@@ -2,7 +2,8 @@
 const products = [
   {
     id: 'M1',
-    name: 'আখের পাউডার গুড় (Powder Gur)',
+    name: 'আখের পাউডার গুড় ',
+    en:'(Powder Gur)',
     category: 'Molasses',
     price: 700,
     image: '/gur/powdergur.png',
@@ -13,7 +14,8 @@ const products = [
   },
   {
     id: 'M2',
-    name: 'আখের দানাদার গুড় (Danadar Gur)',
+    name: 'আখের দানাদার গুড় ',
+    en:'(Danadar Gur)',
     category: 'Molasses',
     price: 650,
     image: '/gur/danadargur.png',
@@ -24,7 +26,8 @@ const products = [
   },
   {
     id: 'M3',
-    name: 'আখের পাটালি গুড় (Patali Gur)',
+    name: 'আখের পাটালি গুড় ',
+    en:'(Patali Gur)',
     category: 'Molasses',
     price: 600,
     image: '/gur/pataligur.png',
@@ -35,7 +38,8 @@ const products = [
   },
   {
     id: 'S1',
-    name: 'মরিচ গুঁড়া (Chili Powder)',
+    name: 'মরিচ গুঁড়া ',
+    en:'(Chili Powder)',
     category: 'Spices',
     price: 150,
     image: '/spices/chilipowder.png',
@@ -46,7 +50,8 @@ const products = [
   },
   {
     id: 'S2',
-    name: 'হলুদ গুঁড়া (Turmeric Powder)',
+    name: 'হলুদ গুঁড়া ',
+    en:'(Turmeric Powder)',
     category: 'Spices',
     price: 120,
     image: '/spices/turmericpowder.png',
@@ -57,7 +62,8 @@ const products = [
   },
   {
     id: 'S3',
-    name: 'চিয়া সিড (Chia Seed)',
+    name: 'চিয়া সিড ',
+    en:'(Chia Seed)',
     category: 'Spices',
     price: 600,
     image: '/spices/chiaseed.png',
@@ -68,7 +74,8 @@ const products = [
   },
   {
     id: 'MG1-11',
-    name: 'ক্ষীরসাপাত / হিমসাগর আম (Khirsapat / Himsagar Mango)',
+    name: 'ক্ষীরসাপাত/হিমসাগর আম (11 KG)',
+    en:'(Khirsapat / Himsagar Mango)',
     category: 'Mango',
     price: 2500,
     image: '/mango/khirsapat.png',
@@ -79,7 +86,8 @@ const products = [
   },
   {
     id: 'MG1-22',
-    name: 'ক্ষীরসাপাত / হিমসাগর আম (Khirsapat / Himsagar Mango)',
+    name: 'ক্ষীরসাপাত/হিমসাগর আম (22 KG) ',
+    en:'(Khirsapat / Himsagar Mango)',
     category: 'Mango',
     price: 5000,
     image: '/mango/khirsapat.png',
@@ -90,7 +98,8 @@ const products = [
   },
   {
     id: 'MG2-11',
-    name: 'আম্রপালি আম (Amropali Mango)',
+    name: 'আম্রপালি আম (11 KG)',
+    en:'(Amropali Mango)',
     category: 'Mango',
     price: 2500,
     image: '/mango/amropali.png',
@@ -101,7 +110,8 @@ const products = [
   },
   {
     id: 'MG2-22',
-    name: 'আম্রপালি আম (Amropali Mango)',
+    name: 'আম্রপালি আম (22 KG)',
+    en:'(Amropali Mango)',
     category: 'Mango',
     price: 5000,
     image: '/mango/amropali.png',
@@ -112,7 +122,8 @@ const products = [
   },
   {
     id: 'MG3-11',
-    name: 'ল্যাংড়া আম (Langra Mango)',
+    name: 'ল্যাংড়া আম (11 KG)',
+    en:'(Langra Mango)',
     category: 'Mango',
     price: 2500,
     image: '/mango/langra.png',
@@ -123,7 +134,8 @@ const products = [
   },
   {
     id: 'MG3-22',
-    name: 'ল্যাংড়া আম (Langra Mango)',
+    name: 'ল্যাংড়া আম (22 KG)',
+    en:'(Langra Mango)',
     category: 'Mango',
     price: 5000,
     image: '/mango/langra.png',
@@ -134,7 +146,8 @@ const products = [
   },
   {
     id: 'MG4-11',
-    name: 'ফজলি আম (Fazli Mango)',
+    name: 'ফজলি আম (11 KG)',
+    en:'(Fazli Mango)',
     category: 'Mango',
     price: 2000,
     image: '/mango/fazli.png',
@@ -145,7 +158,8 @@ const products = [
   },
   {
     id: 'MG4-22',
-    name: 'ফজলি আম (Fazli Mango)',
+    name: 'ফজলি আম (22 KG)',
+    en:'(Fazli Mango)',
     category: 'Mango',
     price: 4000,
     image: '/mango/fazli.png',
@@ -156,7 +170,8 @@ const products = [
   },
   {
     id: 'OG1',
-    name: 'ঘানি ভাংগা সরিষার তেল (Mustard Oil)',
+    name: 'ঘানি ভাংগা সরিষার তেল',
+    en:'(Mustard Oil)',
     category: 'oil-and-ghee',
     price: 1350,
     image: '/mustard-oil/mustard.png',
@@ -167,7 +182,8 @@ const products = [
   },
   {
     id: 'OG2',
-    name: 'ঘি (Desi Ghee)',
+    name: 'ঘি',
+    en:'(Desi Ghee)',
     category: 'oil-and-ghee',
     price: 1350,
     image: '/ghee/ghee.png',
