@@ -105,7 +105,7 @@ const products = [
     category: 'Mango',
     price: 2500,
     image: '/mango/amropali.png',
-    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৭০-৯০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
+    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ১০০-১২০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
     availability: 'unavailable',
     পরিমাণ: '১১ কেজি ক্রেট',
     deliveryCharge: 0, // Free delivery
@@ -117,7 +117,7 @@ const products = [
     category: 'Mango',
     price: 5000,
     image: '/mango/amropali.png',
-    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৭০-৯০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
+    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ১০০-১২০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
     availability: 'unavailable',
     পরিমাণ: '২২ কেজি ক্রেট',
     deliveryCharge: 0, // Free delivery
@@ -129,7 +129,7 @@ const products = [
     category: 'Mango',
     price: 2500,
     image: '/mango/langra.png',
-    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৭০-৯০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
+    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ১০০-১২০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
     availability: 'unavailable',
     পরিমাণ: '১১ কেজি ক্রেট',
     deliveryCharge: 0, // Free delivery
@@ -141,7 +141,7 @@ const products = [
     category: 'Mango',
     price: 5000,
     image: '/mango/langra.png',
-    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৭০-৯০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
+    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ১০০-১২০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
     availability: 'unavailable',
     পরিমাণ: '২২ কেজি ক্রেট',
     deliveryCharge: 0, // Free delivery
@@ -153,7 +153,7 @@ const products = [
     category: 'Mango',
     price: 2000,
     image: '/mango/fazli.png',
-    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৭০-৯০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
+    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৫০-৬০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
     availability: 'unavailable',
     পরিমাণ: '১১ কেজি ক্রেট',
     deliveryCharge: 0, // Free delivery
@@ -165,7 +165,7 @@ const products = [
     category: 'Mango',
     price: 4000,
     image: '/mango/fazli.png',
-    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৭০-৯০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
+    details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৫০-৬০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
     availability: 'unavailable',
     পরিমাণ: '২২ কেজি ক্রেট',
     deliveryCharge: 0, // Free delivery
