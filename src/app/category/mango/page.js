@@ -17,7 +17,7 @@ export default function MangoPage() {
   return (
     <div className="min-h-screen bg-green-50">
       
-      <div className="p-4">
+      <div className="p-0">
         <MangoGrid products={filteredProducts} addToCart={addToCart} />
       </div>
     </div>
