@@ -5,8 +5,10 @@ import Image from 'next/image';
 import ProductCard from './ProductCard';
 
 const MangoGrid = ({ products, addToCart, searchTerm }) => {
-  // Filter products by Mango category
-  const mangoProducts = products.filter((product) => product.category === 'Mango');
+  // Filter products by Mango category and availability
+  const mangoProducts = products.filter(
+    (product) => product.category === 'Mango' && product.availability !== 'unavailable'
+  );
 
   // Further filter by search term if provided
   const filteredMango = searchTerm
