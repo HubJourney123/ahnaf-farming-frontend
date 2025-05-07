@@ -31,6 +31,8 @@ export default function ConfirmOrderPage() {
     upazila: '',
     transactionId: '',
     yourIdentity: '',
+    paidAmount: '', // New field
+    dueAmount: '',  // New field
   });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
@@ -191,6 +193,34 @@ export default function ConfirmOrderPage() {
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 h-24 resize-none bg-white text-gray-900"
                         placeholder="আপনার বিস্তারিত ঠিকানা লিখুন (e.g., হাউস নং, রোড নং, এলাকা)"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-green-800 font-semibold mb-2">
+                        পরিশোধিত পরিমাণ (Paid Amount)
+                      </label>
+                      <input
+                        type="number"
+                        name="paidAmount"
+                        value={formData.paidAmount}
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
+                        placeholder="পরিশোধিত পরিমাণ লিখুন (e.g., 200)"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-green-800 font-semibold mb-2">
+                        বকেয়া পরিমাণ (Due Amount)
+                      </label>
+                      <input
+                        type="number"
+                        name="dueAmount"
+                        value={formData.dueAmount}
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
+                        placeholder="বকেয়া পরিমাণ লিখুন (e.g., 1300)"
                       />
                     </div>
                     <div>
