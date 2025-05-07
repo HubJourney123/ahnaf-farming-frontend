@@ -206,7 +206,7 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
-                        placeholder="পরিশোধিত পরিমাণ লিখুন (e.g., 200)"
+                        placeholder="পরিশোধিত পরিমাণ লিখুন"
                       />
                     </div>
                     <div>
@@ -220,7 +220,7 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
-                        placeholder="বকেয়া পরিমাণ লিখুন (e.g., 1300)"
+                        placeholder="বকেয়া পরিমাণ লিখুন"
                       />
                     </div>
                     <div>
@@ -248,7 +248,7 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
-                        placeholder="e.g., ME 2K05 or others"
+                        placeholder="e.g., ME 2K5 or others"
                       />
                     </div>
 
