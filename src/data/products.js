@@ -2,8 +2,8 @@
 const products = [
   {
     id: 'M1',
-    name: 'আখের পাউডার গুড় ',
-    en:'(Powder Gur)',
+    name: 'আখের পাউডার গুড় (2 KG)',
+    en:'(Courier Pickup)',
     category: 'Molasses',
     price: 700,
     image: '/gur/powdergur.png',
@@ -14,8 +14,8 @@ const products = [
   },
   {
     id: 'M2',
-    name: 'আখের দানাদার গুড় ',
-    en:'(Danadar Gur)',
+    name: 'আখের দানাদার গুড় (2 KG) ',
+    en:'(Courier Pickup)',
     category: 'Molasses',
     price: 650,
     image: '/gur/danadargur.png',
@@ -26,8 +26,8 @@ const products = [
   },
   {
     id: 'M3',
-    name: 'আখের পাটালি গুড় ',
-    en:'(Patali Gur)',
+    name: 'আখের পাটালি গুড় (2 KG)',
+    en:'(Courier Pickup)',
     category: 'Molasses',
     price: 600,
     image: '/gur/pataligur.png',
@@ -38,8 +38,8 @@ const products = [
   },
   {
     id: 'S1',
-    name: 'মরিচ গুঁড়া ',
-    en:'(Chili Powder)',
+    name: 'মরিচ গুঁড়া (100 gm) ',
+    en:'(Courier Pickup)',
     category: 'Spices',
     price: 150,
     image: '/spices/chilipowder.png',
@@ -50,8 +50,8 @@ const products = [
   },
   {
     id: 'S2',
-    name: 'হলুদ গুঁড়া ',
-    en:'(Turmeric Powder)',
+    name: 'হলুদ গুঁড়া (100 gm)',
+    en:'(Courier Pickup)',
     category: 'Spices',
     price: 120,
     image: '/spices/turmericpowder.png',
@@ -62,7 +62,7 @@ const products = [
   },
   {
     id: 'S3',
-    name: 'চিয়া সিড ',
+    name: 'চিয়া সিড (100 gm)',
     en:'(Chia Seed)',
     category: 'Spices',
     price: 600,
@@ -458,8 +458,8 @@ const products = [
   },
   {
     id: 'OG1',
-    name: 'ঘানি ভাংগা সরিষার তেল',
-    en:'(Mustard Oil)',
+    name: 'ঘানি ভাংগা সরিষার তেল (5 Litre)',
+    en:'(Courier Pickup)',
     category: 'oil-and-ghee',
     price: 1350,
     image: '/mustard-oil/mustard.png',
@@ -470,8 +470,8 @@ const products = [
   },
   {
     id: 'OG2',
-    name: 'ঘি',
-    en:'(Desi Ghee)',
+    name: 'ঘি (1 KG)',
+    en:'(Courier Pickup)',
     category: 'oil-and-ghee',
     price: 1350,
     image: '/ghee/ghee.png',
