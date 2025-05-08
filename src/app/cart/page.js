@@ -70,7 +70,7 @@ const CartPageContent = () => {
                       />
                       <div>
                         <span className="text-green-800 font-semibold text-lg">
-                          {item.name}
+                          {item.name} / {item.en}
                         </span>
                         <p className="text-green-600 text-sm mt-1">
                           Quantity: {item.quantity}
