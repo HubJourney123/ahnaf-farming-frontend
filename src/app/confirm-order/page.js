@@ -6,7 +6,7 @@ import Image from 'next/image';
 import products from '../../data/products'; // Import products data
 
 export default function ConfirmOrderPage() {
-  const { cart } = useCart();
+  const { cart, dispatch } = useCart(); // Added dispatch to potentially update cart if needed
   const router = useRouter();
 
   // Calculate delivery charge dynamically based on cart items
@@ -31,8 +31,8 @@ export default function ConfirmOrderPage() {
     upazila: '',
     transactionId: '',
     yourIdentity: '',
-    paidAmount: '', // New field
-    dueAmount: '',  // New field
+    paidAmount: '',
+    dueAmount: '',
   });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
@@ -47,11 +47,20 @@ export default function ConfirmOrderPage() {
     setError(null);
     setCountdown(25);
 
+    // Enrich cart items with full product data including en
+    const enrichedCart = cart.map((item) => {
+      const product = products.find((p) => p.id === item.id);
+      return {
+        ...item,
+        ...product, // Merge with full product data to ensure en is included
+      };
+    });
+
     const data = {
       ...formData,
-      cart,
+      cart: enrichedCart, // Use enriched cart with en field
       totalPrice,
-      deliveryCharge, // This will now be dynamic
+      deliveryCharge,
       grandTotal,
     };
 
@@ -206,7 +215,7 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
-                        placeholder="পরিশোধিত পরিমাণ লিখুন"
+                        placeholder="পরিশোধিত পরিমাণ লিখুন (e.g., 200)"
                       />
                     </div>
                     <div>
@@ -220,7 +229,7 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
-                        placeholder="বকেয়া পরিমাণ লিখুন"
+                        placeholder="বকেয়া পরিমাণ লিখুন (e.g., 1300)"
                       />
                     </div>
                     <div>
@@ -248,38 +257,41 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
-                        placeholder="e.g., ME 2K5 or others"
+                        placeholder="e.g., ME 2K05 or others"
                       />
                     </div>
 
                     <ul className="space-y-6 mt-6">
-                      {cart.map((item) => (
-                        <li
-                          key={item.id}
-                          className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-green-50 p-4 rounded-lg shadow-sm"
-                        >
-                          <div className="flex items-center space-x-4">
-                            <Image
-                              src={item.image}
-                              alt={item.name}
-                              width={80}
-                              height={80}
-                              className="object-cover rounded-lg border border-green-200"
-                            />
-                            <div>
-                              <span className="text-green-800 font-semibold text-lg">
-                                {item.name}
-                              </span>
-                              <p className="text-green-600 text-sm mt-1">
-                                Quantity: {item.quantity}
-                              </p>
-                              <p className="text-amber-600 font-medium mt-1">
-                                ৳ {item.price * item.quantity}
-                              </p>
+                      {cart.map((item) => {
+                        const product = products.find((p) => p.id === item.id);
+                        return (
+                          <li
+                            key={item.id}
+                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-green-50 p-4 rounded-lg shadow-sm"
+                          >
+                            <div className="flex items-center space-x-4">
+                              <Image
+                                src={item.image || product.image}
+                                alt={item.name}
+                                width={80}
+                                height={80}
+                                className="object-cover rounded-lg border border-green-200"
+                              />
+                              <div>
+                                <span className="text-green-800 font-semibold text-lg">
+                                  {item.name}
+                                </span>
+                                <p className="text-green-600 text-sm mt-1">
+                                  Quantity: {item.quantity}
+                                </p>
+                                <p className="text-amber-600 font-medium mt-1">
+                                  ৳ {item.price * item.quantity}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                        </li>
-                      ))}
+                          </li>
+                        );
+                      })}
                     </ul>
 
                     <div className="mt-6 border-t border-green-200 pt-6">
