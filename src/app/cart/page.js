@@ -40,9 +40,17 @@ const CartPageContent = () => {
     router.push('/confirm-order');
   };
 
+  // Functions to handle quantity increase and decrease
+  const increaseQuantity = (item) => {
+    addToCart(item, 1); // Increase quantity by 1
+  };
+
+  const decreaseQuantity = (item) => {
+    addToCart(item, -1); // Decrease quantity by 1
+  };
+
   return (
     <div>
-
       <div className="min-h-screen bg-green-50 py-10 px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold text-center text-green-800 mb-8">
           Your Cart
@@ -72,9 +80,23 @@ const CartPageContent = () => {
                         <span className="text-green-800 font-semibold text-lg">
                           {item.name} / {item.en}
                         </span>
-                        <p className="text-green-600 text-sm mt-1">
-                          Quantity: {item.quantity}
-                        </p>
+                        <div className="flex items-center mt-1">
+                          <button
+                            onClick={() => decreaseQuantity(item)}
+                            className="text-green-800 font-bold text-lg px-2 border border-green-200 rounded-l-lg hover:bg-green-100 transition-colors duration-200"
+                          >
+                            -
+                          </button>
+                          <p className="text-green-600 text-sm mx-2">
+                            Quantity: {item.quantity}
+                          </p>
+                          <button
+                            onClick={() => increaseQuantity(item)}
+                            className="text-green-800 font-bold text-lg px-2 border border-green-200 rounded-r-lg hover:bg-green-100 transition-colors duration-200"
+                          >
+                            +
+                          </button>
+                        </div>
                         <p className="text-amber-600 font-medium mt-1">
                           ৳ {item.price * item.quantity}
                         </p>
@@ -126,4 +148,4 @@ const CartPage = () => (
   </Suspense>
 );
 
-export default CartPage; 
+export default CartPage;
