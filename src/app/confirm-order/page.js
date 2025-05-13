@@ -122,7 +122,7 @@ export default function ConfirmOrderPage() {
   <p className="text-green-700 text-lg">
     অনলাইন পেমেন্ট করতে নিচের নম্বরগুলো ব্যবহার করুন:
   </p>
-  <ol className="list-none text-green-700 text-lg mt-4 space-y-4">
+  <ol className="list-none text-green-700 text-sm mt-4 space-y-4">
     <li className="flex items-center space-x-3">
       <span className="inline-block w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center">
         💰
@@ -278,7 +278,7 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
-                        placeholder="e.g., ME 2K05 or others"
+                        placeholder="e.g., ME 2K5 or others"
                       />
                     </div>
 
