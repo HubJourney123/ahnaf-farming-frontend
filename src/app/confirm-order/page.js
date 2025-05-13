@@ -116,23 +116,43 @@ export default function ConfirmOrderPage() {
                   )}
                   {/* Payment Instructions Box at the Top */}
                   <div className="mt-6 p-6 bg-white border border-green-200 rounded-lg shadow-sm mb-6">
-                    <h3 className="text-xl font-semibold text-green-800 mb-4">
-                      পেমেন্ট নির্দেশনাবলী -
-                    </h3>
-                    <p className="text-green-700 text-lg">
-                      অনলাইন পেমেন্ট করতে নিচের নম্বরগুলো ব্যবহার করুন:
-                    </p>
-                    <ol className="list-none text-green-700 text-lg mt-2 space-y-2">
-                      <li>বিকাশ/নগদ/রকেট (Personal) :- 01753388992 (Send Money)</li>
-                      <li>A/C: Islami Bank Bangladesh PLC. A/C no. 20501130205435515, A/C name: Md. Ibrahim Khalil, Rajshahi Branch</li>
-                    </ol>
-                    <p className="text-green-700 text-lg mt-4">
-                      উপরের নম্বরে টাকা পাঠিয়ে আপনার ট্রাঞ্জেকশন আইডি সাবমিট করে অর্ডার কনফার্ম করুন।
-                    </p>
-                    <p className="text-green-800 text-bold text-lg mt-4">
-                      Minimum ২০০ টাকা অথবা ফুল পেমেন্ট অগ্রিম করা আবশ্যক
-                    </p>
-                  </div>
+  <h3 className="text-xl font-semibold text-green-800 mb-4">
+    পেমেন্ট নির্দেশনাবলী -
+  </h3>
+  <p className="text-green-700 text-lg">
+    অনলাইন পেমেন্ট করতে নিচের নম্বরগুলো ব্যবহার করুন:
+  </p>
+  <ol className="list-none text-green-700 text-lg mt-4 space-y-4">
+    <li className="flex items-center space-x-3">
+      <span className="inline-block w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center">
+        💰
+      </span>
+      <span>
+        বিকাশ/নগদ/রকেট (Personal) :-{' '}
+        <span className="font-medium text-green-800">01753388992 (Send Money)</span>
+      </span>
+    </li>
+    <li className="flex items-center space-x-3">
+      <span className="inline-block w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center">
+        🏦
+      </span>
+      <span>
+        A/C: Islami Bank Bangladesh PLC. A/C no.{' '}
+        <span className="font-medium text-green-800">
+          20501130205435515
+        </span>
+        , A/C name: <span className="font-medium text-green-800">Md. Ibrahim Khalil</span>, Rajshahi Branch
+      </span>
+    </li>
+  </ol>
+  <p className="text-green-700 text-lg mt-4">
+    উপরের নম্বরে টাকা পাঠিয়ে আপনার ট্রাঞ্জেকশন আইডি সাবমিট করে অর্ডার কনফার্ম করুন।
+  </p>
+  <p className="text-green-800 font-bold text-lg mt-4">
+    Minimum ২০০ টাকা অথবা ফুল পেমেন্ট অগ্রিম Send Money করা আবশ্যক
+  </p>
+</div>
+
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
