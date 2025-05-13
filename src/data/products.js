@@ -1,4 +1,4 @@
-// src/data/products.js
+// src/data/products.js   ...
 const products = [
   {
     id: 'M1',
