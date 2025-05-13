@@ -122,14 +122,15 @@ export default function ConfirmOrderPage() {
                     <p className="text-green-700 text-lg">
                       অনলাইন পেমেন্ট করতে নিচের নম্বরগুলো ব্যবহার করুন:
                     </p>
-                    <ul className="list-none text-green-700 text-lg mt-2 space-y-2">
+                    <ol className="list-none text-green-700 text-lg mt-2 space-y-2">
                       <li>বিকাশ/নগদ/রকেট (Personal) :- 01753388992 (Send Money)</li>
-                    </ul>
+                      <li>A/C: Islami Bank Bangladesh PLC. A/C no. 20501130205435515, A/C name: Md. Ibrahim Khalil, Rajshahi Branch</li>
+                    </ol>
                     <p className="text-green-700 text-lg mt-4">
                       উপরের নম্বরে টাকা পাঠিয়ে আপনার ট্রাঞ্জেকশন আইডি সাবমিট করে অর্ডার কনফার্ম করুন।
                     </p>
                     <p className="text-green-800 text-bold text-lg mt-4">
-                      Minimum ২০০ টাকা অথবা ফুল পেমেন্ট অগ্রিম Send Money করা আবশ্যক
+                      Minimum ২০০ টাকা অথবা ফুল পেমেন্ট অগ্রিম করা আবশ্যক
                     </p>
                   </div>
 
@@ -201,7 +202,7 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 h-24 resize-none bg-white text-gray-900"
-                        placeholder="আপনার বিস্তারিত ঠিকানা লিখুন (e.g., হাউস নং, রোড নং, এলাকা)"
+                        placeholder="e.g.,সেক্টর নং/রোড নং/এলাকা..."
                       />
                     </div>
                     <div>
@@ -243,7 +244,7 @@ export default function ConfirmOrderPage() {
                         onChange={handleChange}
                         required
                         className="w-full p-3 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-900"
-                        placeholder="আপনার লেনদেন আইডি লিখুন"
+                        placeholder="Trx ID নং / Bank Transfer কথাটি লিখুন"
                       />
                     </div>
                     <div>
