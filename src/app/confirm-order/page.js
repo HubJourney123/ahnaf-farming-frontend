@@ -149,7 +149,7 @@ export default function ConfirmOrderPage() {
     উপরের নম্বরে টাকা পাঠিয়ে আপনার ট্রাঞ্জেকশন আইডি সাবমিট করে অর্ডার কনফার্ম করুন।
   </p>
   <p className="text-green-800 font-bold text-lg mt-4">
-    Minimum ২০০ টাকা অথবা ফুল পেমেন্ট অগ্রিম Send Money করা আবশ্যক
+    Minimum ২০০ টাকা অথবা ফুল পেমেন্ট করা আবশ্যক
   </p>
 </div>
 
