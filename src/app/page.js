@@ -30,9 +30,9 @@ export default function Home() {
       <section className="p-0">
         {searchTerm === '' && <CategoryGrid searchTerm={searchTerm} />}
       </section>
+      <MangoGrid products={products} addToCart={addToCart} searchTerm={searchTerm} />
       <MolassesGrid products={products} addToCart={addToCart} searchTerm={searchTerm} />
       <OilAndGheeGrid products={products} addToCart={addToCart} searchTerm={searchTerm} />
-      <MangoGrid products={products} addToCart={addToCart} searchTerm={searchTerm} />
       <SpicesGrid products={products} addToCart={addToCart} searchTerm={searchTerm} />
       
     </div>
