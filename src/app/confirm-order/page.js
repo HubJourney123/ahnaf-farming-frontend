@@ -356,8 +356,9 @@ export default function ConfirmOrderPage() {
               <p className="text-green-800 text-lg">
                 Your order has been placed, thank you for being with Ahnaf Farming!
               </p>
-              <p className="text-green-800 text-lg mt-2">
-                আপনার অর্ডারটি সম্পন্ন হয়েছে, আহনাফ ফার্মিং-এর সাথে থাকার জন্য ধন্যবাদ!
+              <p className="text-teal-800 text-2xl mt-2">
+                আপনার পার্সেলটি আগামী 3 দিনের মধ্যেই বুকিং দেওয়া হবে। অনুগ্রহ করে অপেক্ষা করুন।
+ধন্যবাদ
               </p>
               <p className="text-green-600 text-base mt-2">
                 আপনাকে পার্সেল সেটআপের আগে যোগাযোগ করা হবে বা কল করা হবে।
