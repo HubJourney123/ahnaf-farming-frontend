@@ -74,7 +74,7 @@ const products = [
   },
   {
     id: 'MG1-11-CP',
-    name: 'খিরসাপাত / হিমসাগর (11 KG)',
+    name: 'খিরসাপাত (11 KG)',  //হিমসাগর
     en:'(Courier Pickup)',
     category: 'Mango',
     price: 1430,
@@ -86,7 +86,7 @@ const products = [
   },
   {
     id: 'MG1-11-HD',
-    name: 'খিরসাপাত / হিমসাগর (11 KG)',
+    name: 'খিরসাপাত (11 KG)',
     en:'(Home Delivery)',
     category: 'Mango',
     price: 1530,
@@ -98,7 +98,7 @@ const products = [
   },
   {
     id: 'MG1-22-CP',
-    name: 'খিরসাপাত / হিমসাগর (22 KG) ',
+    name: 'খিরসাপাত (22 KG) ',
     en:'(Courier Pickup)',
     category: 'Mango',
     price: 2830,
@@ -110,7 +110,7 @@ const products = [
   },
   {
     id: 'MG1-22-HD',
-    name: 'খিরসাপাত / হিমসাগর (22 KG) ',
+    name: 'খিরসাপাত (22 KG) ', 
     en:'(Home Delivery)',
     category: 'Mango',
     price: 2980,
