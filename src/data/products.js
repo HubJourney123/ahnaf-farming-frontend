@@ -368,7 +368,7 @@ const products = [
     price: 1200,
     image: '/mango/bombay-khirsha.jpeg',
     details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৫০-৬০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
-    availability: 'available',
+    availability: 'unavailable',
     পরিমাণ: '১১ কেজি ক্রেট',
     deliveryCharge: 0, // Free delivery
   },
@@ -380,7 +380,7 @@ const products = [
     price: 1300,
     image: '/mango/bombay-khirsha.jpeg',
     details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৫০-৬০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality',
-    availability: 'available',
+    availability: 'unavailable',
     পরিমাণ: '১১ কেজি ক্রেট',
     deliveryCharge: 0, // Free delivery
   },
@@ -392,7 +392,7 @@ const products = [
     price: 2400,
     image: '/mango/bombay-khirsha.jpeg',
     details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৫০-৬০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality. নোট: প্রচন্ড গরমের কারণে বা কুরিয়ারে পরিবহণের সময় ৫-১০% আম হয়ত নষ্ট হতে পারে। এটা স্বাভাবিক। কিন্তু যদি ১৫% বা বেশি আম নষ্ট হয় তাহলে রাগারাগি না করে ছবিসহ বিষয়টা অবগত করার অনুরোধ রইল। আলোচনার মাধ্যমে অবশ্যই সমাধান করা হবে',
-    availability: 'available',
+    availability: 'unavailable',
     পরিমাণ: '২২ কেজি ক্রেট',
     deliveryCharge: 0, // Free delivery
   },
@@ -404,7 +404,7 @@ const products = [
     price: 2600,
     image: '/mango/bombay-khirsha.jpeg',
     details: 'আমের সাইজ প্রতি ২০ কেজিতে প্রায় ৫০-৬০ পিস হয়ে থাকে। গাছ এবং এলাকা ভেদে সামান্য কম বেশি হতে পারে। তবে আম গুলো ফ্রেশ এবং সুস্বাদু। Excellent Quality. নোট: প্রচন্ড গরমের কারণে বা কুরিয়ারে পরিবহণের সময় ৫-১০% আম হয়ত নষ্ট হতে পারে। এটা স্বাভাবিক। কিন্তু যদি ১৫% বা বেশি আম নষ্ট হয় তাহলে রাগারাগি না করে ছবিসহ বিষয়টা অবগত করার অনুরোধ রইল। আলোচনার মাধ্যমে অবশ্যই সমাধান করা হবে',
-    availability: 'available',
+    availability: 'unavailable',
     পরিমাণ: '২২ কেজি ক্রেট',
     deliveryCharge: 0, // Free delivery
   },
